@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        form(action="http://localhost:3030/add", method="post") 
+            label
+                div Client Name 
+                input(type="text" name="clientName" value="John")
+                div Client Surname 
+                input(type="text", name="clientSurname", value="Johnson")
+                div City 
+                select
+                    each val, index in cities
+                        option #{val}
+                div Clinic 
+                select
+                    each val, index in clinics 
+                        option #{val}
+                div Specialist 
+                select
+                    each val, index in specialists 
+                        option #{val}
+                div Service 
+                select
+                    each val, index in services 
+                        option #{val}
