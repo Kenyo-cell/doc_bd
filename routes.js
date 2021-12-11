@@ -1,4 +1,3 @@
-const asyncHandler = require("express-async-handler");
 const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
@@ -11,10 +10,6 @@ const db = mysql.createConnection({
 });
 
 const router = express.Router();
-
-const constructPath = (pageName) => {
-    return path.join(__dirname + '/static/' + pageName);
-};
 
 const initQuery = () => {
     return `select ContractCode, C.CityName, C2.ClinicName, C3.ClientName, S.ServiceName, ST.SpecialistTypeDescription from Contract
