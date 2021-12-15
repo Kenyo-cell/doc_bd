@@ -23,5 +23,9 @@ html(lang="en")
                     td #{val.ServiceName}
                     td #{val.SpecialistTypeDescription}
         a(href="http://localhost:3030/add") 
-            input(type="button", name="button", value="Add New Record")
-
+            input(type="button", name="add-button", value="Add New Record")
+        a(href="http://localhost:3030/delete")
+            input(type="button", name="delete-button", value="Delete Record")
+        a(href="http://localhost:3030/manage")
+            input(type="button", name="delete-button", value="Manage Parameters")
+        

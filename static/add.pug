@@ -6,25 +6,42 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body 
-        form(action="http://localhost:3030/add", method="post") 
+        form(action="http://localhost:3030/add", method="post", id='submit-form') 
             label
                 div Client Name 
-                input(type="text" name="clientName" value="John")
+                input(type="text" name="clientName" value="John", id="name")
+            label
                 div Client Surname 
-                input(type="text", name="clientSurname", value="Johnson")
+                input(type="text", name="clientSurname", value="Johnson", id="surname")
+                label
+                div Client Phone 
+                input(type="text", name="clientPhone", value="88005553535", id="phone")
+
+            label
                 div City 
-                select
+                select(name="city", id="city")
                     each val, index in cities
-                        option #{val}
+                        option #{val.cityName}
+            
+            label
                 div Clinic 
-                select
+                select(name="clinic", id="clinic")
                     each val, index in clinics 
-                        option #{val}
+                        option #{val.clinicName}
+
+            label
                 div Specialist 
-                select
+                select(name="specialist", id="specialist")
                     each val, index in specialists 
-                        option #{val}
+                        option #{val.specialistTypeDescription} #{val.specialistName} #{val.specialistSurname}
+
+            label
                 div Service 
-                select
+                select(name="service", id="service")
                     each val, index in services 
-                        option #{val}
+                        option #{val.serviceName}
+        
+            input(type="submit", id="submit-btn", value="Add")
+    
+
+    //- script(src="scripts/submit_add.js") 
