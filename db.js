@@ -208,14 +208,6 @@ Contract.belongsTo(Clinic, { foreignKey: "ClinicCode" });
 Contract.belongsTo(Service, { foreignKey: "ServiceCode" });
 Contract.belongsTo(Specialist, { foreignKey: "SpecialistCode" });
 
-
 sequelize.sync();
-// City.sync();
-// Client.sync();
-// Specialist.sync();
-// Service.sync();
-// Clinic.sync();
-// Contract.sync();
-
 
 module.exports = { Client, City, Specialist, Clinic, Service, Contract };

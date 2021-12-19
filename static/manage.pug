@@ -5,5 +5,36 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+        link(rel="stylesheet", href="http://localhost:3030/styles/manage.css")
     body 
-        p jopa 
+        div Enter New Table Value
+        form(action="http://localhost:3030/manage/city", method="post") 
+            input(type="text", name='table', value='City', readonly)
+            div City Name
+            input(type='text', name='cityName', required)
+            input(type="submit")
+        form(action="http://localhost:3030/manage/clinic", method="post") 
+            input(type="text", name='table', value='Clinic', readonly)
+            div ClinicName
+            input(type='text', name='clinicName', required)
+            div CityName
+            input(type='text', name='cityName', required)
+            input(type="submit")
+        form(action="http://localhost:3030/manage/service", method="post") 
+            input(type="text", name='table', value='Service', readonly)
+            div ServiceName
+            input(type='text', name='serviceName', required)
+            div Srevice Price 
+            input(type='text', name='servicePrice', required)
+            input(type="submit")
+        form(action="http://localhost:3030/manage/specialist", method="post") 
+            input(type="text", name='table', value='SpecialistType', readonly)
+            div Specialist Type
+            input(type='text', name='specialistType', required)
+            div Specialist Name
+            input(type='text', name='specialistName', required)
+            div Specialist Surname
+            input(type='text', name='specialistSurname', required)
+            div Specialist Clinic
+            input(type='text', name='specialistClinic', required)
+            input(type="submit")

@@ -12,14 +12,17 @@ html(lang="en")
                 th City
                 th Clinic
                 th Client Name
+                th Client Surname
                 th Service
                 th Specialist
             each val, index in result 
                 tr 
-                    td #{val.ContractCode} 
+                    td 
+                        a(href="http://localhost:3030/contract/" + val.ContractCode) #{val.ContractCode} 
                     td #{val.CityName} 
                     td #{val.ClinicName} 
                     td #{val.ClientName} 
+                    td #{val.ClientSurname} 
                     td #{val.ServiceName}
                     td #{val.SpecialistTypeDescription}
         a(href="http://localhost:3030/add") 
@@ -27,5 +30,12 @@ html(lang="en")
         a(href="http://localhost:3030/delete")
             input(type="button", name="delete-button", value="Delete Record")
         a(href="http://localhost:3030/manage")
-            input(type="button", name="delete-button", value="Manage Parameters")
+            input(type="button", name="manage-button", value="Manage Parameters")
+
+        form(action="http://localhost:3030/filter", method="get") 
+            button(id="filter-button") Filter By
+            input(type="text", id="field", name="field")
+            input(type="text", id="value", name="value")
+        script(src="http://localhost:3030/scripts/option_filter.js")
+ 
         
