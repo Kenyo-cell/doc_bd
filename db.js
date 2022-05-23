@@ -188,25 +188,25 @@ const Contract = sequelize.define('Contract', {
     }
 }, defaultConfig);
 
-Clinic.hasMany(Specialist, { foreignKey: "ClinicCode" });
-Clinic.belongsTo(City, { foreignKey: "CityCode" });
-Clinic.hasMany(Contract, { foreignKey: "ContractCode" });
-
-City.hasMany(Contract, { foreignKey: "ContractCode" });
-City.hasMany(Clinic, { foreignKey: "CityCode" });
-
-Client.hasMany(Contract, { foreignKey: "ContractCode" });
-
-Service.hasMany(Contract, { foreignKey: "ContractCode" });
-
-Specialist.hasMany(Contract, { foreignKey: "ContractCode" });
-Specialist.belongsTo(Clinic, { foreignKey: "ClinicCode" });
-
 Contract.belongsTo(Client, { foreignKey: "ClientCode" });
 Contract.belongsTo(City, { foreignKey: "CityCode" });
 Contract.belongsTo(Clinic, { foreignKey: "ClinicCode" });
 Contract.belongsTo(Service, { foreignKey: "ServiceCode" });
 Contract.belongsTo(Specialist, { foreignKey: "SpecialistCode" });
+
+Clinic.hasMany(Specialist, { foreignKey: "ClinicCode" });
+Clinic.belongsTo(City, { foreignKey: "CityCode" });
+Clinic.hasMany(Contract, { foreignKey: "ClinicCode" });
+
+City.hasMany(Contract, { foreignKey: "CityCode" });
+City.hasMany(Clinic, { foreignKey: "CityCode" });
+
+Client.hasMany(Contract, { foreignKey: "ClientCode" });
+
+Service.hasMany(Contract, { foreignKey: "ServiceCode" });
+
+Specialist.hasMany(Contract, { foreignKey: "SpecialistCode" });
+Specialist.belongsTo(Clinic, { foreignKey: "ClinicCode" });
 
 sequelize.sync();
 
